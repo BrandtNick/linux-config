@@ -125,17 +125,8 @@ export EDITOR="$VISUAL"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias yggio3dnsip="sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' sharedyggio3_dns-proxy-server_1"
-alias yggio2dnsip="sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' yggio2_dns-proxy-server_1"
-alias yggiodnsip="sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cs_dns-proxy-server_1"
-alias dpsa="docker ps -a"
 
-# yggio aliases
-YGGIO="/home/endgame/dev/yggio/yggio"
-alias yggio3start="yggio compose -c shared/yggio3 up"
-alias yggio3stop="yggio compose -c shared/yggio3 down"
-alias yggio2start="yggio compose -c shared/yggio2 up"
-alias yggio2stop="yggio compose -c shared/yggio2 down"
+# Aliases
 alias vu="pactl set-sink-volume 0 +5%"
 alias vd="pactl set-sink-volume 0 -5%"
 alias gs="git status"
@@ -146,15 +137,8 @@ alias gpo="git push origin"
 alias gpm="git pull origin master"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-
-if [ -f /home/endgame/dev/yggio/tools/dev-scripts/yggiorc.sh ]; then
-    source /home/endgame/dev/yggio/tools/dev-scripts/yggiorc.sh
-fi
-
-alias ylist="yggio config -l"
-alias yadd="yggio config -a"
-alias ycompose="yggio compose -c"
 alias dps='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}"'
+alias dpsa="dps -a"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/Downloads/jdk-11.0.5+10/bin/:$PATH"
